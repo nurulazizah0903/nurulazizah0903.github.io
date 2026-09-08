@@ -30,7 +30,7 @@ const translations = {
     metrics: {
       exp_num: "+6",
       exp_label: "Tahun Pengalaman Praktis",
-      proj_num: "+12",
+      proj_num: "+13",
       proj_label: "Sistem Enterprise & Web Dibangun",
       cert_num: "+16",
       cert_label: "Sertifikasi & Penghargaan Akademik",
@@ -41,7 +41,7 @@ const translations = {
       tag: "Portofolio Karya",
       title: "Recent Projects",
       subtitle: "Kumpulan aplikasi web enterprise, sistem informasi instansi pemerintah, sistem manajemen pendidikan, dan rekayasa data yang telah berhasil diimplementasikan.",
-      filter_all: "Semua Proyek (12)",
+      filter_all: "Semua Proyek (13)",
       filter_enterprise: "Enterprise & ERP",
       filter_public: "Pemerintah & Publik",
       filter_education: "Sistem Pendidikan",
@@ -105,7 +105,12 @@ const translations = {
       p12_cat: "Pelayanan Publik",
       p12_title: "Queue Info System (SI ANIK)",
       p12_desc: "Sistem antrean loket cerdas dengan visualisasi diagram pemanggilan real-time dan rekapitulasi tren kunjungan harian.",
-      p12_full: "SI ANIK - Sistem Antrean Informasi dan Pelayanan Publik. Solusi antrean loket terdigitalisasi dengan diagram lingkaran status pelayanan (Belum Dilayani, Sedang Dilayani, Selesai), grafik komparasi pengunjung hari ini vs kemarin, serta panggilan suara otomatis."
+      p12_full: "SI ANIK - Sistem Antrean Informasi dan Pelayanan Publik. Solusi antrean loket terdigitalisasi dengan diagram lingkaran status pelayanan (Belum Dilayani, Sedang Dilayani, Selesai), grafik komparasi pengunjung hari ini vs kemarin, serta panggilan suara otomatis.",
+
+      p13_cat: "Luxury Fashion & Web Platform",
+      p13_title: "MAFAZA EXCLUSIVE — Haute Couture",
+      p13_desc: "Platform portofolio dan katalog busana mewah haute couture karya desainer dengan integrasi reservasi fitting, lookbook interaktif, dan panel admin CMS.",
+      p13_full: "MAFAZA EXCLUSIVE adalah platform digital atelier fashion mewah yang menampilkan koleksi busana haute couture, kebaya kustom, dan gaun bespoke karya desainer Miftakhul Jannah. Dilengkapi fitur katalog interaktif, lookbook seasonal, formulir reservasi fitting privat, serta panel administrasi CMS berbasis web modern yang di-deploy di Vercel."
     },
     experience: {
       tag: "Pengalaman & Studi",
@@ -311,7 +316,7 @@ const translations = {
     metrics: {
       exp_num: "+6",
       exp_label: "Years of Practical Tech Experience",
-      proj_num: "+12",
+      proj_num: "+13",
       proj_label: "Enterprise & Web Systems Built",
       cert_num: "+16",
       cert_label: "Certifications & Academic Honors",
@@ -322,7 +327,7 @@ const translations = {
       tag: "Featured Portfolio",
       title: "Recent Projects",
       subtitle: "A curated collection of enterprise web applications, government information systems, educational management platforms, and data engineering solutions.",
-      filter_all: "All Projects (12)",
+      filter_all: "All Projects (13)",
       filter_enterprise: "Enterprise & ERP",
       filter_public: "Govt & Public Sector",
       filter_education: "Educational Systems",
@@ -386,7 +391,12 @@ const translations = {
       p12_cat: "Public Service",
       p12_title: "Queue Info System (SI ANIK)",
       p12_desc: "Smart multi-counter digital queuing system with real-time status pie charts, daily visitor trend tracking, and audio callouts.",
-      p12_full: "SI ANIK - Smart Public Service Queue Information System. Multi-counter digital queue solution featuring real-time visual status charts (Pending, In-Progress, Completed), day-over-day visitor comparisons, and automated audio call announcements."
+      p12_full: "SI ANIK - Smart Public Service Queue Information System. Multi-counter digital queue solution featuring real-time visual status charts (Pending, In-Progress, Completed), day-over-day visitor comparisons, and automated audio call announcements.",
+
+      p13_cat: "Luxury Fashion & Web Platform",
+      p13_title: "MAFAZA EXCLUSIVE — Haute Couture",
+      p13_desc: "Luxury haute couture fashion portfolio and catalog platform with atelier fitting reservations, interactive lookbook, and CMS admin portal.",
+      p13_full: "MAFAZA EXCLUSIVE is a luxury bespoke atelier digital platform presenting haute couture collections, handcrafted kebaya, and evening gowns by designer Miftakhul Jannah. Built with an interactive seasonal lookbook, private fitting appointment booking, and a modern web CMS administration panel deployed on Vercel."
     },
     experience: {
       tag: "Journey & Background",

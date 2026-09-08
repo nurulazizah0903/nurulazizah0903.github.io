@@ -319,19 +319,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const client = card.getAttribute('data-client') || '-';
       const year = card.getAttribute('data-year') || '2021-2024';
       const tech = card.getAttribute('data-tech') || 'Full-Stack';
+      const url = card.getAttribute('data-url');
 
       const modalLang = translations[currentLang].modal;
+
+      const details = [
+        { label: modalLang.client_label, val: client },
+        { label: modalLang.timeline_label, val: year },
+        { label: modalLang.tech_label, val: tech }
+      ];
+
+      if (url) {
+        const liveLabel = currentLang === 'en' ? 'Live Demo' : 'Tautan Situs';
+        const displayUrl = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+        details.push({
+          label: liveLabel,
+          val: `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color:var(--accent-volt); text-decoration:underline; font-weight:700; display:inline-flex; align-items:center; gap:4px;">${displayUrl} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>`
+        });
+      }
 
       openModal({
         imgSrc,
         title,
         desc,
         category,
-        details: [
-          { label: modalLang.client_label, val: client },
-          { label: modalLang.timeline_label, val: year },
-          { label: modalLang.tech_label, val: tech }
-        ]
+        details
       });
     });
   });

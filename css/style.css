@@ -912,6 +912,25 @@ section[id] {
   font-weight: 500;
 }
 
+.tech-tag.live-tag {
+  background: rgba(197, 255, 65, 0.12);
+  border-color: rgba(197, 255, 65, 0.35);
+  color: var(--accent-volt);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.tech-tag.live-tag:hover {
+  background: var(--accent-volt);
+  color: var(--text-dark);
+  border-color: var(--accent-volt);
+  transform: translateY(-1px);
+}
+
 /* ==========================================================================
    Experience & Education Section (Journey)
    ========================================================================== */

@@ -59,6 +59,7 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
   background-image: 
     radial-gradient(circle at 50% 0%, rgba(197, 255, 65, 0.05) 0%, transparent 40%),
     radial-gradient(circle at 100% 40%, rgba(244, 108, 56, 0.03) 0%, transparent 35%),
@@ -348,9 +350,10 @@ button, input, textarea, select {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
-  z-index: 998;
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1050;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-smooth);
@@ -359,13 +362,17 @@ button, input, textarea, select {
 .mobile-nav-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
+  right: -360px;
+  width: min(320px, 85vw);
   height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: var(--bg-surface);
   border-left: 1px solid var(--border-medium);
-  z-index: 999;
-  padding: 30px 24px;
+  z-index: 1100;
+  padding: 26px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -494,7 +501,8 @@ button, input, textarea, select {
   margin-bottom: 18px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .hero-role-pill {
@@ -1336,6 +1344,8 @@ button, input, textarea, select {
   font-size: 0.98rem;
   font-weight: 600;
   color: var(--text-primary);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Contact Form */
@@ -1551,7 +1561,8 @@ button, input, textarea, select {
 .footer-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 14px 20px;
 }
 
 .footer-link {
@@ -1701,31 +1712,115 @@ button, input, textarea, select {
 }
 
 @media (max-width: 580px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 6.5vw, 2.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
   .hero-section {
-    padding-top: 110px;
+    padding-top: 105px;
+    padding-bottom: 50px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 9vw, 3.25rem);
+  }
+
+  .hero-actions {
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-contact-pills {
+    gap: 8px;
+  }
+
+  .contact-pill {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-body {
+    padding: 18px 16px;
   }
 
   .certs-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .metrics-grid {
     grid-template-columns: 1fr;
+    padding: 20px 16px;
+    gap: 16px;
+    border-radius: var(--radius-lg);
   }
 
   .metric-card {
+    padding: 6px 0 12px 0;
     border-bottom: 1px solid var(--border-subtle);
   }
   .metric-card:last-child {
     border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .metric-num {
+    font-size: 2.5rem;
+  }
+
+  .timeline-card,
+  .edu-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .timeline-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .timeline-role {
+    font-size: 1.1rem;
+  }
+
+  .timeline-period {
+    font-size: 0.72rem;
+    padding: 4px 10px;
   }
 
   .tools-bento-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tool-bento-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-md);
   }
 
   .tool-bento-card.col-span-2 {
@@ -1733,15 +1828,61 @@ button, input, textarea, select {
   }
 
   .contact-box {
-    padding: 24px 18px;
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
   }
 
   .contact-form {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-backdrop {
+    padding: 12px 8px;
+  }
+
+  .modal-container {
+    border-radius: var(--radius-lg);
+    max-height: 92dvh;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-body {
     padding: 20px 16px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-desc {
+    font-size: 0.92rem;
   }
 
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: 16px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .toast-notification {
+    bottom: 18px;
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 12px 18px;
   }
 }

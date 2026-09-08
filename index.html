@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nurul Azizah - Personal Website & CV Portfolio. Experienced Full-Stack IT Developer & Software Engineer based in Surabaya, Indonesia.">
+  <meta name="keywords" content="Nurul Azizah, IT Developer, Full-Stack Developer, Programmer Surabaya, Laravel, PHP, CodeIgniter, Acumatica ERP, Portfolio">
+  <meta name="author" content="Nurul Azizah">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nurul Azizah | IT Developer & Full-Stack Engineer">
+  <meta property="og:description" content="Personal Portfolio & CV of Nurul Azizah - Experienced Full-Stack Developer specializing in enterprise systems, ERP flows, and web architecture.">
+  <meta property="og:image" content="assets/images/profile-aziza.png">
+
+  <title id="pageTitle">Nurul Azizah — IT Developer & Full-Stack Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/profile-aziza.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Navigation Capsule (Sawad Style) -->
+  <header class="site-header">
+    <div class="nav-capsule">
+      <a href="#home" class="brand-logo" aria-label="Nurul Azizah Home">
+        <span class="dot"></span>
+        AZIZAH.
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#tools" class="nav-link" data-i18n="nav.tools">Tools</a></li>
+          <li><a href="#certificates" class="nav-link" data-i18n="nav.certificates">Certificates</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher Pill Button -->
+        <button class="lang-switch-btn" id="langSwitchBtn" aria-label="Ganti Bahasa / Switch Language" title="Ganti Bahasa (ID / EN)">
+          <span class="lang-code active" data-lang="id">ID</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-code" data-lang="en">EN</span>
+        </button>
+
+        <!-- <a href="CV Azizah July 2026.pdf" download="CV-Nurul-Azizah-2026.pdf" class="btn btn-primary btn-sm" aria-label="Download CV PDF">
+          <span data-i18n="nav.download_cv">Download CV</span>
+          <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a> -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Open mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="#home" class="brand-logo">
+        <span class="dot"></span>
+        AZIZAH.
+      </a>
+      <button id="closeDrawer" style="background:transparent; border:none; color:var(--text-primary); cursor:pointer; padding:8px;" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Language Switcher -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding:10px 14px; background:var(--bg-surface-elevated); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+      <span style="font-size:0.85rem; color:var(--text-secondary);">Language / Bahasa</span>
+      <button class="lang-switch-btn" id="langSwitchMobile" aria-label="Switch Language">
+        <span class="lang-code active" data-lang="id">ID</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-code" data-lang="en">EN</span>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="#home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience & Education</a></li>
+      <li><a href="#tools" data-i18n="nav.tools">Skills & Tools</a></li>
+      <li><a href="#certificates" data-i18n="nav.certificates">Certificates</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+
+    <div style="margin-top:auto; padding-top:20px;">
+      <!-- <a href="CV Azizah July 2026.pdf" download="CV-Nurul-Azizah-2026.pdf" class="btn btn-primary" style="width:100%;">
+        <span data-i18n="contact.btn_download">Download CV (PDF)</span>
+      </a> -->
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span data-i18n="hero.status">Available for New Opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="title-light">Nurul</span>
+              <span class="title-accent">Azizah</span>
+            </h1>
+
+            <div class="hero-role">
+              <span data-i18n="hero.role">IT Developer</span>
+              <span class="hero-role-pill" data-i18n="hero.role_pill">Full-Stack Engineer</span>
+            </div>
+
+            <p class="hero-description" data-i18n="hero.description">
+              Experienced Full-Stack Developer passionate about continuous learning and keeping pace with evolving web technologies. Proven track record of delivering high-quality enterprise solutions, ERP flows, and web applications through effective communication and client collaboration.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span data-i18n="hero.btn_projects">Recent Projects</span>
+                <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary" data-i18n="hero.btn_contact">
+                Let's Talk
+              </a>
+              <!-- <a href="CV Azizah July 2026.pdf" download="CV-Nurul-Azizah-2026.pdf" class="btn btn-secondary" title="Download CV PDF">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="hero.btn_cv">CV PDF</span>
+              </a> -->
+            </div>
+
+            <div class="hero-contact-pills">
+              <span class="contact-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span data-i18n="hero.location">Surabaya, Indonesia</span>
+              </span>
+              <a href="mailto:jobbazizah@gmail.com" class="contact-pill" id="copyEmailPill" title="Klik untuk salin email">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                jobbazizah@gmail.com
+              </a>
+              <!-- <a href="https://wa.me/6281233792074" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +62 812-3379-2074
+              </a> -->
+            </div>
+          </div>
+
+          <!-- Right Profile Card -->
+          <div class="hero-card-wrap">
+            <div class="hero-profile-card">
+              <div class="profile-img-container">
+                <img src="assets/images/profile-aziza.png" alt="Nurul Azizah - IT Developer" class="profile-img" width="1024" height="1024">
+              </div>
+
+              <div class="profile-card-footer">
+                <div class="profile-status-item">
+                  <span class="profile-status-label" data-i18n="hero.location_label">Location</span>
+                  <span class="profile-status-val">Surabaya, ID</span>
+                </div>
+
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/nurul-azizah-661320243" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="https://nurulazizah0903.github.io" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Portfolio">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                  <a href="mailto:jobbazizah@gmail.com" class="social-icon-btn" aria-label="Direct Email">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </a>
+                  <!-- <a href="https://wa.me/6281233792074" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp Message">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                  </a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         METRICS BAR (Sawad Stats Style)
+         ========================================================================== -->
+    <section class="metrics-section">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-num" data-i18n="metrics.exp_num">+6</span>
+            <span class="metric-label" data-i18n="metrics.exp_label">Years of Practical Tech Experience</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num" data-i18n="metrics.proj_num">+12</span>
+            <span class="metric-label" data-i18n="metrics.proj_label">Enterprise & Web Systems Built</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num" data-i18n="metrics.cert_num">+16</span>
+            <span class="metric-label" data-i18n="metrics.cert_label">Certifications & Academic Honors</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num" data-i18n="metrics.sat_num">100%</span>
+            <span class="metric-label" data-i18n="metrics.sat_label">Delivery Commitment & Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ANIMATED RUNNING MARQUEE (Ticker Ribbon)
+         ========================================================================== -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">LARAVEL <span class="separator">✦</span></div>
+        <div class="marquee-item">PHP FULL-STACK <span class="separator">✦</span></div>
+        <div class="marquee-item">CODEIGNITER <span class="separator">✦</span></div>
+        <div class="marquee-item">POSTGRESQL & MYSQL <span class="separator">✦</span></div>
+        <div class="marquee-item">ACUMATICA CLOUD ERP <span class="separator">✦</span></div>
+        <div class="marquee-item">TRANSPORT MANAGEMENT SYSTEM <span class="separator">✦</span></div>
+        <div class="marquee-item">POWER BI ANALYTICS <span class="separator">✦</span></div>
+        <div class="marquee-item">PYTHON DEVELOPMENT <span class="separator">✦</span></div>
+        <div class="marquee-item">RESTFUL APIS <span class="separator">✦</span></div>
+        <div class="marquee-item">ENTERPRISE DATA PROCESSING <span class="separator">✦</span></div>
+        <!-- Duplicate for continuous loop -->
+        <div class="marquee-item">LARAVEL <span class="separator">✦</span></div>
+        <div class="marquee-item">PHP FULL-STACK <span class="separator">✦</span></div>
+        <div class="marquee-item">CODEIGNITER <span class="separator">✦</span></div>
+        <div class="marquee-item">POSTGRESQL & MYSQL <span class="separator">✦</span></div>
+        <div class="marquee-item">ACUMATICA CLOUD ERP <span class="separator">✦</span></div>
+        <div class="marquee-item">TRANSPORT MANAGEMENT SYSTEM <span class="separator">✦</span></div>
+        <div class="marquee-item">POWER BI ANALYTICS <span class="separator">✦</span></div>
+        <div class="marquee-item">PYTHON DEVELOPMENT <span class="separator">✦</span></div>
+        <div class="marquee-item">RESTFUL APIS <span class="separator">✦</span></div>
+        <div class="marquee-item">ENTERPRISE DATA PROCESSING <span class="separator">✦</span></div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION ("RECENT PROJECTS")
+         ========================================================================== -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="projects.tag">Portofolio Karya</div>
+          <h2 class="section-title"><span data-i18n="projects.title">Recent Projects</span></h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">
+            Kumpulan aplikasi web enterprise, sistem informasi instansi pemerintah, sistem manajemen pendidikan, dan rekayasa data yang telah berhasil diimplementasikan.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="projects.filter_all">Semua Proyek (12)</button>
+          <button class="filter-btn" data-filter="enterprise" data-i18n="projects.filter_enterprise">Enterprise & ERP</button>
+          <button class="filter-btn" data-filter="public" data-i18n="projects.filter_public">Pemerintah & Publik</button>
+          <button class="filter-btn" data-filter="education" data-i18n="projects.filter_education">Sistem Pendidikan</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- 1. SIEBA -->
+          <article class="project-card" data-category="public" data-img="assets/images/project-sieba.png" data-client="Dinas ESDM Provinsi Jawa Timur" data-year="Production" data-tech="PHP, MySQL, GIS, Web Portal" data-i18n-key="p1">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">DESDM JATIM</span>
+              <img src="assets/images/project-sieba.png" alt="SIEBA - Sistem Informasi Energi Baru Terbarukan" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p1_cat">Pemerintah & Energi</span>
+              <h3 class="project-title" data-i18n="projects.p1_title">SIEBA - New Renewable Energy</h3>
+              <p class="project-desc" data-i18n="projects.p1_desc">Sistem informasi monitoring infrastruktur energi baru dan terbarukan untuk Dinas ESDM Provinsi Jawa Timur.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Dashboard</span>
+                <span class="tech-tag">DESDM</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. School Academic Info System -->
+          <article class="project-card" data-category="education" data-img="assets/images/project-academic-al-anwar.png" data-client="Al Anwar Jambi" data-year="Production" data-tech="CodeIgniter, MySQL, Bootstrap" data-i18n-key="p2">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">AL ANWAR JAMBI</span>
+              <img src="assets/images/project-academic-al-anwar.png" alt="School Academic Information System Al Anwar Jambi" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p2_cat">Sistem Pendidikan</span>
+              <h3 class="project-title" data-i18n="projects.p2_title">School Academic Information</h3>
+              <p class="project-desc" data-i18n="projects.p2_desc">Portal akademik terpadu sekolah Al Anwar Jambi meliputi modul PPDB Online, kalender akademik, dan informasi kelembagaan.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">PPDB Online</span>
+                <span class="tech-tag">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Omni Channel -->
+          <article class="project-card" data-category="enterprise public" data-img="assets/images/project-omni-channel.png" data-client="Disdukcapil / CRM Integration" data-year="Enterprise" data-tech="Full-Stack Web, Multi-Channel API, Realtime Analytics" data-i18n-key="p3">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">DISDUKCAPIL CRM</span>
+              <img src="assets/images/project-omni-channel.png" alt="Omni Channel Information System" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p3_cat">Enterprise & CRM</span>
+              <h3 class="project-title" data-i18n="projects.p3_title">Omni Channel Customer Care</h3>
+              <p class="project-desc" data-i18n="projects.p3_desc">Platform agregasi pesan terpadu menghubungkan WhatsApp, Twitter, Instagram, dan web chat dalam satu analitik interaksi petugas.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Omni Channel</span>
+                <span class="tech-tag">CRM</span>
+                <span class="tech-tag">Social APIs</span>
+                <span class="tech-tag">Analytics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. School Budget -->
+          <article class="project-card" data-category="education enterprise" data-img="assets/images/project-school-budget.png" data-client="Yayasan Wachid Hasyim Surabaya" data-year="Enterprise" data-tech="PHP, SQL Server, Financial Control" data-i18n-key="p4">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">E-BUDGET</span>
+              <img src="assets/images/project-school-budget.png" alt="School Budget Information System" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p4_cat">Financial & Pendidikan</span>
+              <h3 class="project-title" data-i18n="projects.p4_title">School Budget Information System</h3>
+              <p class="project-desc" data-i18n="projects.p4_desc">Sistem kontrol dan audit keuangan realisasi dana infaq, penerimaan, dan RKAS untuk jenjang TK, SD, SMP, dan SMA Yayasan Wachid Hasyim.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Financial Audit</span>
+                <span class="tech-tag">RKAS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. School Salary (SIGAP) -->
+          <article class="project-card" data-category="education enterprise" data-img="assets/images/project-salary-sigap.png" data-client="Lembaga Pendidikan SMA" data-year="Production" data-tech="PHP, MySQL, Payroll Engine" data-i18n-key="p5">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">SIGAP PAYROLL</span>
+              <img src="assets/images/project-salary-sigap.png" alt="School Salary Information System SIGAP" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p5_cat">Payroll & HR</span>
+              <h3 class="project-title" data-i18n="projects.p5_title">School Salary System (SIGAP)</h3>
+              <p class="project-desc" data-i18n="projects.p5_desc">Aplikasi penggajian digital tenaga pendidik dan karyawan sekolah dengan kalkulasi tunjangan otomatis serta cetak slip gaji.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Payroll Engine</span>
+                <span class="tech-tag">Reporting</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. School Payment (SIPS) -->
+          <article class="project-card" data-category="education" data-img="assets/images/project-payment-sips.jpg" data-client="Lembaga Pendidikan" data-year="Production" data-tech="CodeIgniter, MySQL, Billing Log" data-i18n-key="p6">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">SIPS BILLING</span>
+              <img src="assets/images/project-payment-sips.jpg" alt="School Payment Information System SIPS" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p6_cat">Billing & Kasir</span>
+              <h3 class="project-title" data-i18n="projects.p6_title">School Payment System (SIPS)</h3>
+              <p class="project-desc" data-i18n="projects.p6_desc">Manajemen pembayaran SPP dan kasir sekolah dengan log audit kas harian, rekapitulasi bulanan, dan integrasi kalender tagihan.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Billing Engine</span>
+                <span class="tech-tag">Audit Trail</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Delivery Note (SIJALAN) -->
+          <article class="project-card" data-category="public enterprise" data-img="assets/images/project-delivery-sijalan.png" data-client="Kejaksaan Negeri" data-year="Production" data-tech="PHP, PostgreSQL, Role Security" data-i18n-key="p7">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">SIJALAN KEJAKSAAN</span>
+              <img src="assets/images/project-delivery-sijalan.png" alt="Delivery Note Information System SIJALAN" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p7_cat">Pemerintah & Logistik</span>
+              <h3 class="project-title" data-i18n="projects.p7_title">Delivery Note System (SIJALAN)</h3>
+              <p class="project-desc" data-i18n="projects.p7_desc">Sistem informasi pencatatan surat pengantar, tracking ekspedisi berkas perkara hukum, dan manajemen hak akses seksi dinas.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Document Tracking</span>
+                <span class="tech-tag">Security</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Audit System SMK3 -->
+          <article class="project-card" data-category="enterprise" data-img="assets/images/project-audit-smk3.png" data-client="PT Perkebunan Nusantara XI (PTPN XI)" data-year="Enterprise" data-tech="Web App, Document Validation, K3" data-i18n-key="p8">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">SMK3 PTPN XI</span>
+              <img src="assets/images/project-audit-smk3.png" alt="Audit System SMK3 PTPN XI" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p8_cat">K3 & Audit Korporat</span>
+              <h3 class="project-title" data-i18n="projects.p8_title">Audit System (SMK3 PTPN XI)</h3>
+              <p class="project-desc" data-i18n="projects.p8_desc">Sistem evaluasi dan audit kepatuhan SMK3 terdigitalisasi dengan verifikasi bukti dokumen objektif untuk operasional perkebunan.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">SMK3 Audit</span>
+                <span class="tech-tag">Compliance</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Acumatica System -->
+          <article class="project-card" data-category="enterprise" data-img="assets/images/project-acumatica-erp.png" data-client="Enterprise Cloud ERP" data-year="Enterprise" data-tech="Acumatica, SQL Server, ERP Flow" data-i18n-key="p9">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">ACUMATICA ERP</span>
+              <img src="assets/images/project-acumatica-erp.png" alt="Data Engineer of Acumatica System" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p9_cat">Cloud ERP Enterprise</span>
+              <h3 class="project-title" data-i18n="projects.p9_title">Data Engineer of Acumatica</h3>
+              <p class="project-desc" data-i18n="projects.p9_desc">Rekayasa aliran data dan kustomisasi alur bisnis sistem ERP Cloud Acumatica (Sales Orders, Inventory, Payables, Receivables).</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Acumatica ERP</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">ERP Flow</span>
+                <span class="tech-tag">ETL</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. TMS System -->
+          <article class="project-card" data-category="enterprise" data-img="assets/images/project-tms-system.png" data-client="Transport & Fleet Logistics" data-year="Enterprise" data-tech="Power BI, SQL, Task Analytics" data-i18n-key="p10">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">TMS FLEET</span>
+              <img src="assets/images/project-tms-system.png" alt="Data Engineer of TMS System" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p10_cat">Logistik & Armada</span>
+              <h3 class="project-title" data-i18n="projects.p10_title">Data Engineer of TMS System</h3>
+              <p class="project-desc" data-i18n="projects.p10_desc">Dashboard analitik armada logistik real-time untuk memantau performa pengiriman, status tugas harian armada, dan metrik driver.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">TMS</span>
+                <span class="tech-tag">Fleet Analytics</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">SQL</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Productivity Management -->
+          <article class="project-card" data-category="enterprise" data-img="assets/images/project-productivity-mgmt.png" data-client="PT Pangan Lestari" data-year="Enterprise" data-tech="PHP, MySQL, Activity Reporting" data-i18n-key="p11">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">PT PANGAN LESTARI</span>
+              <img src="assets/images/project-productivity-mgmt.png" alt="Productivity Management System" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p11_cat">Manufaktur & Operasional</span>
+              <h3 class="project-title" data-i18n="projects.p11_title">Productivity Management System</h3>
+              <p class="project-desc" data-i18n="projects.p11_desc">Sistem evaluasi produktivitas kerja operasional dan laporan aktivitas harian pabrik fasilitas Cikarang dan GIIC.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Productivity</span>
+                <span class="tech-tag">Pangan Lestari</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. Queue System (SI ANIK) -->
+          <article class="project-card" data-category="public enterprise" data-img="assets/images/project-queue-sianik.png" data-client="PT Primavisi Globalindo" data-year="Production" data-tech="PHP, MySQL, Realtime Queue" data-i18n-key="p12">
+            <div class="project-thumb-wrap">
+              <span class="project-overlay-badge">SI ANIK QUEUE</span>
+              <img src="assets/images/project-queue-sianik.png" alt="Queue Information System SI ANIK" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="project-client-tag" data-i18n="projects.p12_cat">Pelayanan Publik</span>
+              <h3 class="project-title" data-i18n="projects.p12_title">Queue Info System (SI ANIK)</h3>
+              <p class="project-desc" data-i18n="projects.p12_desc">Sistem antrean loket cerdas dengan visualisasi diagram pemanggilan real-time dan rekapitulasi tren kunjungan harian.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Realtime Display</span>
+                <span class="tech-tag">Queue Engine</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & EDUCATION SECTION
+         ========================================================================== -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag orange" data-i18n="experience.tag">Pengalaman & Studi</div>
+          <h2 class="section-title"><span data-i18n="experience.title">Career & Education</span></h2>
+          <p class="section-subtitle" data-i18n="experience.subtitle">
+            Rekam jejak profesional dalam rekayasa perangkat lunak, sistem data korporat, serta latar belakang pendidikan teknik informatika.
+          </p>
+        </div>
+
+        <div class="journey-layout">
+          <!-- Left: Work Experience -->
+          <div class="experience-col">
+            <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:24px; display:flex; align-items:center; gap:10px;">
+              <span style="color:var(--accent-volt);">✦</span> <span data-i18n="experience.work_heading">Pengalaman Kerja</span>
+            </h3>
+
+            <div class="timeline-list">
+              <!-- PT Pangan Lestari -->
+              <div class="timeline-card current">
+                <div class="timeline-top">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="experience.pangan_role">Electronic Data Processing</h4>
+                    <div class="timeline-company">PT Pangan Lestari</div>
+                  </div>
+                  <span class="timeline-period" data-i18n="experience.pangan_period">2024 — Sekarang</span>
+                </div>
+                <p class="timeline-desc" data-i18n="experience.pangan_desc">
+                  Bertanggung jawab atas pemrosesan data operasional elektronik, integrasi data sistem inventori & logistik, pemantauan alur produksi, serta penegakan kepatuhan standar industri pangan dan sistem K3 korporat.
+                </p>
+                <div class="timeline-skills">
+                  <span class="tech-tag">Data Processing</span>
+                  <span class="tech-tag">ERP Flow</span>
+                  <span class="tech-tag">Productivity Metrics</span>
+                  <span class="tech-tag">Enterprise SQL</span>
+                </div>
+              </div>
+
+              <!-- PT Primavisi Globalindo -->
+              <div class="timeline-card">
+                <div class="timeline-top">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="experience.prima_role">Programmer</h4>
+                    <div class="timeline-company">PT Primavisi Globalindo</div>
+                  </div>
+                  <span class="timeline-period" data-i18n="experience.prima_period">2021 — 2024</span>
+                </div>
+                <p class="timeline-desc" data-i18n="experience.prima_desc">
+                  Mengembangkan aplikasi web kustom untuk klien instansi dan korporasi, arsitektur database, sistem antrean pintar (SI ANIK), sistem manajemen sekolah, serta integrasi API layanan multi-kanal.
+                </p>
+                <div class="timeline-skills">
+                  <span class="tech-tag">Full-Stack PHP</span>
+                  <span class="tech-tag">CodeIgniter / Laravel</span>
+                  <span class="tech-tag">MySQL & PostgreSQL</span>
+                  <span class="tech-tag">REST APIs</span>
+                </div>
+              </div>
+
+              <!-- PT Jasa Thecno -->
+              <div class="timeline-card">
+                <div class="timeline-top">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="experience.thecno_role">Programmer</h4>
+                    <div class="timeline-company">PT Jasa Thecno</div>
+                  </div>
+                  <span class="timeline-period" data-i18n="experience.thecno_period">2020 — 2021</span>
+                </div>
+                <p class="timeline-desc" data-i18n="experience.thecno_desc">
+                  Membangun modul backend, query database relasional, antarmuka pengguna interaktif, dan pemeliharaan aplikasi berbasis web untuk berbagai solusi sistem klien.
+                </p>
+                <div class="timeline-skills">
+                  <span class="tech-tag">Web Development</span>
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Client Support</span>
+                </div>
+              </div>
+
+              <!-- PT Peac Bromo -->
+              <div class="timeline-card">
+                <div class="timeline-top">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="experience.bromo_role">Programmer Intern</h4>
+                    <div class="timeline-company">PT Peac Bromo (Business Solution)</div>
+                  </div>
+                  <span class="timeline-period" data-i18n="experience.bromo_period">Magang 3 Bulan</span>
+                </div>
+                <p class="timeline-desc" data-i18n="experience.bromo_desc">
+                  Praktik kerja industri dalam pengembangan software solusi bisnis, pengujian antarmuka aplikasi, dan asistensi teknis tim rekayasa perangkat lunak.
+                </p>
+                <div class="timeline-skills">
+                  <span class="tech-tag">Software Internship</span>
+                  <span class="tech-tag">Problem Solving</span>
+                  <span class="tech-tag">Web Coding</span>
+                </div>
+              </div>
+
+              <!-- PT Doran Sukses Indonesia -->
+              <div class="timeline-card">
+                <div class="timeline-top">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="experience.doran_role">Staff Operasional</h4>
+                    <div class="timeline-company">PT Doran Sukses Indonesia</div>
+                  </div>
+                  <span class="timeline-period" data-i18n="experience.doran_period">2 Bulan</span>
+                </div>
+                <p class="timeline-desc" data-i18n="experience.doran_desc">
+                  Mendukung efisiensi alur operasional dan pencatatan inventaris teknologi dalam lingkungan kerja yang dinamis dan berorientasi target.
+                </p>
+                <div class="timeline-skills">
+                  <span class="tech-tag">Time Management</span>
+                  <span class="tech-tag">Operational Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Education & Honors -->
+          <div class="education-col">
+            <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:24px; display:flex; align-items:center; gap:10px;">
+              <span style="color:var(--accent-orange);">✦</span> <span data-i18n="experience.edu_heading">Pendidikan Formal</span>
+            </h3>
+
+            <!-- PENS -->
+            <div class="edu-card">
+              <h4 class="edu-institution" data-i18n="experience.pens_title">Politeknik Elektronika Negeri Surabaya (PENS)</h4>
+              <div class="edu-degree" data-i18n="experience.pens_degree">D3 Informatics Engineering Program (A.Md.Kom.)</div>
+              <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6;" data-i18n="experience.pens_desc">
+                Program studi Teknik Informatika dengan fokus pada rekayasa perangkat lunak lanjutan, perancangan basis data relasional skala enterprise, algoritma pemrosesan, dan pengembangan sistem terdistribusi.
+              </p>
+              <div class="edu-meta">
+                <span>Surabaya, Jawa Timur</span>
+                <span class="edu-badge">2021 — 2024</span>
+              </div>
+            </div>
+
+            <!-- SMK 17 Agustus -->
+            <div class="edu-card">
+              <h4 class="edu-institution" data-i18n="experience.smk_title">SMK 17 Agustus 1945 Surabaya</h4>
+              <div class="edu-degree" data-i18n="experience.smk_degree">Software Engineering (Rekayasa Perangkat Lunak - RPL)</div>
+              <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6;" data-i18n="experience.smk_desc">
+                Pendidikan kejuruan spesialisasi pemrograman komputer, dasar arsitektur web, basis data, dan logika pemrograman.
+              </p>
+              <div style="margin-top:10px; padding:6px 12px; background:rgba(197,255,65,0.08); border-radius:6px; border:1px solid var(--border-volt); font-size:0.8rem; color:var(--accent-volt); font-weight:600;" data-i18n="experience.smk_award">
+                ★ Peraih Predikat: "Siswa Terbaik Jenjang XI RPL 2018-2019"
+              </div>
+              <div class="edu-meta">
+                <span>Surabaya, Jawa Timur</span>
+                <span class="edu-badge">2017 — 2020</span>
+              </div>
+            </div>
+
+            <!-- Bahasa / Language -->
+            <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:24px; margin-top:24px;">
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:14px; color:var(--text-primary);" data-i18n="experience.lang_title">
+                Kemampuan Bahasa
+              </h4>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface-elevated); border-radius:var(--radius-sm);">
+                  <span style="font-weight:600;" data-i18n="experience.lang_id">Bahasa Indonesia</span>
+                  <span style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase;" data-i18n="experience.lang_id_lvl">Native / Fasih</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface-elevated); border-radius:var(--radius-sm);">
+                  <span style="font-weight:600;" data-i18n="experience.lang_en">Bahasa Inggris</span>
+                  <span style="font-size:0.8rem; color:var(--accent-volt); font-weight:700; text-transform:uppercase;" data-i18n="experience.lang_en_lvl">Skor EPT: 493</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TOOLS & SKILLS SECTION (Sawad "PREMIUM TOOLS")
+         ========================================================================== -->
+    <section class="tools-section" id="tools">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="tools.tag">Keahlian & Teknologi</div>
+          <h2 class="section-title"><span data-i18n="tools.title">Premium Tools & Skills</span></h2>
+          <p class="section-subtitle" data-i18n="tools.subtitle">
+            Teknologi dan metodologi utama yang digunakan dalam merancang, membangun, dan mengoptimalkan sistem perangkat lunak berkinerja tinggi.
+          </p>
+        </div>
+
+        <div class="tools-bento-grid">
+          <!-- Backend Languages -->
+          <div class="tool-bento-card col-span-2">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card1_title">Backend Development & Frameworks</h3>
+            <span class="tool-category" data-i18n="tools.card1_cat">Core Programming & Architecture</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card1_desc">
+              Pengalaman mendalam dalam arsitektur backend MVC, perancangan RESTful API, dan optimasi logika bisnis performa tinggi.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">PHP</span>
+              <span class="tool-pill">Laravel</span>
+              <span class="tool-pill">CodeIgniter</span>
+              <span class="tool-pill">Python</span>
+              <span class="tool-pill">RESTful API</span>
+              <span class="tool-pill">MVC Pattern</span>
+            </div>
+          </div>
+
+          <!-- Relational Databases -->
+          <div class="tool-bento-card">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card2_title">Databases & Query</h3>
+            <span class="tool-category" data-i18n="tools.card2_cat">Storage & Data Optimization</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card2_desc">
+              Perancangan skema relasional, indexing, stored procedures, dan query optimization.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">MySQL</span>
+              <span class="tool-pill">PostgreSQL</span>
+              <span class="tool-pill">SQL Server</span>
+            </div>
+          </div>
+
+          <!-- Enterprise ERP & Logistics -->
+          <div class="tool-bento-card">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card3_title">Enterprise Systems</h3>
+            <span class="tool-category" data-i18n="tools.card3_cat">ERP & Business Processes</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card3_desc">
+              Kustomisasi alur bisnis rantai pasok, manajemen gudang, keuangan, dan logistik.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">Acumatica ERP</span>
+              <span class="tool-pill">TMS System</span>
+              <span class="tool-pill">ERP Flow</span>
+            </div>
+          </div>
+
+          <!-- Business Intelligence -->
+          <div class="tool-bento-card">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card4_title">Power BI & Analytics</h3>
+            <span class="tool-category" data-i18n="tools.card4_cat">Business Intelligence</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card4_desc">
+              Pembuatan dashboard analitik eksekutif dan visualisasi KPI real-time.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">Power BI</span>
+              <span class="tool-pill">Data Modeling</span>
+              <span class="tool-pill">Interactive Dashboards</span>
+            </div>
+          </div>
+
+          <!-- Frontend & Tooling -->
+          <div class="tool-bento-card">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card5_title">Frontend & Version Control</h3>
+            <span class="tool-category" data-i18n="tools.card5_cat">Interface & Git Workflow</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card5_desc">
+              Pembuatan UI web yang interaktif, responsif, serta kolaborasi repositori berbasis Git.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">JavaScript</span>
+              <span class="tool-pill">HTML5 / CSS3</span>
+              <span class="tool-pill">GIT Versioning</span>
+            </div>
+          </div>
+
+          <!-- Methodologies & Soft Skills -->
+          <div class="tool-bento-card col-span-2">
+            <div class="tool-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="M2 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M12 22v-4"/><path d="m19.07 19.07-2.83-2.83"/><path d="M22 12h-4"/><path d="m19.07 4.93-2.83 2.83"/></svg>
+            </div>
+            <h3 class="tool-name" data-i18n="tools.card6_title">Methodologies & Professional Skills</h3>
+            <span class="tool-category" data-i18n="tools.card6_cat">Problem Solving & Execution</span>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;" data-i18n="tools.card6_desc">
+              Kemampuan analitis dalam merumuskan solusi teknis yang tepat guna, manajemen prioritas tugas, dan koordinasi komunikatif dengan stakeholder.
+            </p>
+            <div class="tool-pills">
+              <span class="tool-pill">Problem Solving & Solutions</span>
+              <span class="tool-pill">Time Management</span>
+              <span class="tool-pill">Task Management</span>
+              <span class="tool-pill">Client Collaboration</span>
+              <span class="tool-pill">Audit Trail Compliance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CERTIFICATES & CREDENTIALS SECTION
+         ========================================================================== -->
+    <section class="certificates-section" id="certificates">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="certificates.tag">Sertifikasi & Penghargaan</div>
+          <h2 class="section-title"><span data-i18n="certificates.title">Verified Credentials</span></h2>
+          <p class="section-subtitle" data-i18n="certificates.subtitle">
+            Ijazah kelulusan, sertifikat kompetensi teknologi informasi (AWS, Dart), standar audit industri, dan penghargaan akademik resmi.
+          </p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- 1. PENS Diploma -->
+          <div class="cert-card" data-img="assets/images/cert-pens-diploma.jpg" data-cert-key="cert1">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pens-diploma.jpg" alt="Ijazah PENS Ahli Madya Komputer" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert1_issuer">Politeknik Elektronika Negeri Surabaya</span>
+              <h4 class="cert-title" data-i18n="certificates.cert1_title">Ahli Madya Komputer (A.Md.Kom.)</h4>
+              <span class="cert-date" data-i18n="certificates.cert1_date">Juli 2024</span>
+            </div>
+          </div>
+
+          <!-- 2. Siswa Terbaik SMK -->
+          <div class="cert-card" data-img="assets/images/cert-siswa-terbaik-smk.jpg" data-cert-key="cert2">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-siswa-terbaik-smk.jpg" alt="Piagam Siswa Terbaik RPL SMK 17 Agustus" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert2_issuer">SMK 17 Agustus 1945 Surabaya</span>
+              <h4 class="cert-title" data-i18n="certificates.cert2_title">Piagam Siswa Terbaik XI RPL</h4>
+              <span class="cert-date" data-i18n="certificates.cert2_date">Mei 2019</span>
+            </div>
+          </div>
+
+          <!-- 3. English Proficiency Hang Tuah -->
+          <div class="cert-card" data-img="assets/images/cert-toefl-hangtuah.jpg" data-cert-key="cert3">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-toefl-hangtuah.jpg" alt="English Proficiency Test Hang Tuah University" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert3_issuer">Pusat Bahasa Universitas Hang Tuah</span>
+              <h4 class="cert-title" data-i18n="certificates.cert3_title">English Proficiency Test (Score: 493)</h4>
+              <span class="cert-date" data-i18n="certificates.cert3_date">Oktober 2023</span>
+            </div>
+          </div>
+
+          <!-- 4. Dicoding AWS Cloud -->
+          <div class="cert-card" data-img="assets/images/cert-dicoding-aws.png" data-cert-key="cert4">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-dicoding-aws.png" alt="Dicoding Cloud Practitioner Essentials AWS" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert4_issuer">Dicoding Academy</span>
+              <h4 class="cert-title" data-i18n="certificates.cert4_title">Cloud Practitioner Essentials (AWS)</h4>
+              <span class="cert-date" data-i18n="certificates.cert4_date">Juni 2023</span>
+            </div>
+          </div>
+
+          <!-- 5. Dicoding Dart -->
+          <div class="cert-card" data-img="assets/images/cert-dicoding-dart.png" data-cert-key="cert5">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-dicoding-dart.png" alt="Dicoding Pemrograman dengan Dart" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert5_issuer">Dicoding Academy</span>
+              <h4 class="cert-title" data-i18n="certificates.cert5_title">Pemrograman dengan Dart</h4>
+              <span class="cert-date" data-i18n="certificates.cert5_date">Desember 2021</span>
+            </div>
+          </div>
+
+          <!-- 6. AMEN Indonesia Mentors -->
+          <div class="cert-card" data-img="assets/images/cert-amen-indonesia.png" data-cert-key="cert6">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-amen-indonesia.png" alt="Sertifikat AMEN Indonesia" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert6_issuer">AMEN ASEAN Mentorship</span>
+              <h4 class="cert-title" data-i18n="certificates.cert6_title">Training of Mentors (ToM) AMEN</h4>
+              <span class="cert-date" data-i18n="certificates.cert6_date">Februari 2019</span>
+            </div>
+          </div>
+
+          <!-- 7. Magang Peac Bromo -->
+          <div class="cert-card" data-img="assets/images/cert-magang-peacbromo.jpg" data-cert-key="cert7">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-magang-peacbromo.jpg" alt="Sertifikat Magang PT Peac Bromo" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert7_issuer">PT Peac Bromo</span>
+              <h4 class="cert-title" data-i18n="certificates.cert7_title">Sertifikat Magang Siswa</h4>
+              <span class="cert-date" data-i18n="certificates.cert7_date">April 2019</span>
+            </div>
+          </div>
+
+          <!-- 8. Basic K3 -->
+          <div class="cert-card" data-img="assets/images/cert-pangan-k3.jpg" data-cert-key="cert8">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pangan-k3.jpg" alt="Sertifikat Basic K3 PT Pangan Lestari" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert8_issuer">PT Pangan Lestari</span>
+              <h4 class="cert-title" data-i18n="certificates.cert8_title">Sertifikasi Basic K3</h4>
+              <span class="cert-date" data-i18n="certificates.cert8_date">Agustus 2025</span>
+            </div>
+          </div>
+
+          <!-- 9. FSSC 22000 -->
+          <div class="cert-card" data-img="assets/images/cert-pangan-fssc22000.jpg" data-cert-key="cert9">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pangan-fssc22000.jpg" alt="Sertifikat FSSC 22000" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert9_issuer">PT Pangan Lestari</span>
+              <h4 class="cert-title" data-i18n="certificates.cert9_title">Food Safety System (FSSC 22000)</h4>
+              <span class="cert-date" data-i18n="certificates.cert9_date">Agustus 2025</span>
+            </div>
+          </div>
+
+          <!-- 10. HACCP -->
+          <div class="cert-card" data-img="assets/images/cert-pangan-haccp.jpg" data-cert-key="cert10">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pangan-haccp.jpg" alt="Sertifikat HACCP" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert10_issuer">PT Pangan Lestari</span>
+              <h4 class="cert-title" data-i18n="certificates.cert10_title">HACCP Certification</h4>
+              <span class="cert-date" data-i18n="certificates.cert10_date">Agustus 2025</span>
+            </div>
+          </div>
+
+          <!-- 11. Food Defense -->
+          <div class="cert-card" data-img="assets/images/cert-pangan-food-fraud.jpg" data-cert-key="cert11">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pangan-food-fraud.jpg" alt="Sertifikat Food Fraud and Food Defense" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert11_issuer">PT Pangan Lestari</span>
+              <h4 class="cert-title" data-i18n="certificates.cert11_title">Food Fraud & Food Defense</h4>
+              <span class="cert-date" data-i18n="certificates.cert11_date">Agustus 2025</span>
+            </div>
+          </div>
+
+          <!-- 12. Allergen Management -->
+          <div class="cert-card" data-img="assets/images/cert-pangan-allergen.jpg" data-cert-key="cert12">
+            <div class="cert-thumb-wrap">
+              <img src="assets/images/cert-pangan-allergen.jpg" alt="Sertifikat Food Allergen Management" class="cert-thumb" loading="lazy">
+              <div class="cert-zoom-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer" data-i18n="certificates.cert12_issuer">PT Pangan Lestari</span>
+              <h4 class="cert-title" data-i18n="certificates.cert12_title">Food Allergen Management</h4>
+              <span class="cert-date" data-i18n="certificates.cert12_date">Agustus 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION ("LET'S WORK TOGETHER" - Sawad Style)
+         ========================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-grid">
+            <!-- Left Info -->
+            <div class="contact-info">
+              <div class="section-tag" data-i18n="contact.tag">Hubungi Saya</div>
+              <h2 class="contact-headline"><span data-i18n="contact.headline">Let's Work Together</span></h2>
+              <p class="contact-sub" data-i18n="contact.subtitle">
+                Tertarik merekrut atau mendiskusikan implementasi sistem informasi, rekayasa data ERP, atau solusi web full-stack? Jangan ragu untuk terhubung secara langsung.
+              </p>
+
+              <div class="contact-direct-items">
+                <!-- WhatsApp -->
+                <!-- <a href="https://wa.me/6281233792074" target="_blank" rel="noopener noreferrer" class="direct-item">
+                  <div class="direct-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <span class="direct-label" data-i18n="contact.direct_wa">WhatsApp / Telepon</span>
+                    <div class="direct-val">+62 812-3379-2074</div>
+                  </div>
+                </a> -->
+
+                <!-- Email -->
+                <a href="mailto:jobbazizah@gmail.com" class="direct-item">
+                  <div class="direct-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <span class="direct-label" data-i18n="contact.direct_email">Email Resmi</span>
+                    <div class="direct-val">jobbazizah@gmail.com</div>
+                  </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/nurul-azizah-661320243" target="_blank" rel="noopener noreferrer" class="direct-item">
+                  <div class="direct-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </div>
+                  <div>
+                    <span class="direct-label" data-i18n="contact.direct_linkedin">LinkedIn</span>
+                    <div class="direct-val">nurul-azizah-661320243</div>
+                  </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://nurulazizah0903.github.io" target="_blank" rel="noopener noreferrer" class="direct-item">
+                  <div class="direct-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </div>
+                  <div>
+                    <span class="direct-label" data-i18n="contact.direct_github">GitHub Portfolio</span>
+                    <div class="direct-val">nurulazizah0903.github.io</div>
+                  </div>
+                </a>
+              </div>
+
+              <div>
+                <!-- <a href="CV Azizah July 2026.pdf" download="CV-Nurul-Azizah-2026.pdf" class="btn btn-primary" style="width:fit-content;">
+                  <span data-i18n="contact.btn_download">Download Complete CV (PDF)</span>
+                  <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a> -->
+              </div>
+            </div>
+
+            <!-- Right Form -->
+            <div>
+              <form class="contact-form" id="contactForm">
+                <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:700; margin-bottom:6px;" data-i18n="contact.form_title">
+                  Kirim Pesan Langsung
+                </h3>
+                <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px;" data-i18n="contact.form_subtitle">
+                  Pesan Anda akan otomatis terhubung ke kontak WhatsApp & email Nurul Azizah.
+                </p>
+
+                <div class="form-group">
+                  <label for="formName" class="form-label" data-i18n="contact.name_label">Nama Anda</label>
+                  <input type="text" id="formName" class="form-input" placeholder="Masukkan nama Anda atau perusahaan" data-i18n-placeholder="contact.name_placeholder" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="formEmail" class="form-label" data-i18n="contact.email_label">Alamat Email</label>
+                  <input type="email" id="formEmail" class="form-input" placeholder="nama@perusahaan.com" data-i18n-placeholder="contact.email_placeholder" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="formSubject" class="form-label" data-i18n="contact.topic_label">Topik Diskusi / Layanan</label>
+                  <select id="formSubject" class="form-select">
+                    <option value="Tawaran Pekerjaan (Full-Time / Contract)" data-i18n="contact.topic_opt1">Tawaran Pekerjaan (Full-Time / Contract)</option>
+                    <option value="Proyek Web Development / Sistem Informasi" data-i18n="contact.topic_opt2">Proyek Web Development / Sistem Informasi</option>
+                    <option value="Konsultasi ERP & Rekayasa Data" data-i18n="contact.topic_opt3">Konsultasi ERP & Rekayasa Data</option>
+                    <option value="Peluang Kolaborasi Lainnya" data-i18n="contact.topic_opt4">Peluang Kolaborasi Lainnya</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label" data-i18n="contact.msg_label">Pesan Anda</label>
+                  <textarea id="formMessage" class="form-textarea" placeholder="Jelaskan kebutuhan proyek atau detail posisi pekerjaan..." data-i18n-placeholder="contact.msg_placeholder" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">
+                  <span data-i18n="contact.submit_btn">Kirim via WhatsApp</span>
+                  <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          &copy; 2026 <strong>Nurul Azizah</strong>. <span data-i18n="footer.copyright">Hak cipta dilindungi undang-undang.</span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home" class="footer-link" data-i18n="nav.home">Home</a>
+          <a href="#projects" class="footer-link" data-i18n="nav.projects">Projects</a>
+          <a href="#experience" class="footer-link" data-i18n="nav.experience">Experience</a>
+          <a href="#tools" class="footer-link" data-i18n="nav.tools">Tools</a>
+          <a href="#certificates" class="footer-link" data-i18n="nav.certificates">Certificates</a>
+          <a href="#contact" class="footer-link" data-i18n="nav.contact">Contact</a>
+        </div>
+
+        <button class="back-to-top" id="backToTopBtn" aria-label="Kembali ke atas">
+          <span data-i18n="footer.back_to_top">Kembali ke atas</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL (For Project & Certificate Previews)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-img-wrap">
+        <img src="" alt="" id="modalImg">
+      </div>
+
+      <div class="modal-body">
+        <span class="modal-category" id="modalCategory">Project Showcase</span>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        <p class="modal-desc" id="modalDesc">Detailed project description goes here...</p>
+
+        <div class="modal-details-grid" id="modalDetailsGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+    <span id="toastMessage">Notifikasi berhasil</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

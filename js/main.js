@@ -207,6 +207,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
+  // Smooth scroll for all internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        if (typeof closeMobileNav === 'function') {
+          closeMobileNav();
+        }
+      }
+    });
+  });
+
   // 4. Project Filtering
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -400,13 +419,178 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 8. Back to Top Button
-  const backToTopBtn = document.getElementById('backToTopBtn');
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
+    }
+
+  // 9. Protected CV Popup Modal (View Only - No Download)
+  const cvModal = document.getElementById('cvModal');
+  const cvCloseBtn = document.getElementById('cvCloseBtn');
+  const openCvBtns = document.querySelectorAll('.btn-open-cv');
+  const cvSingleImg = document.getElementById('cvSingleImg');
+  const cvCurrentPage = document.getElementById('cvCurrentPage');
+  const cvBottomPage = document.getElementById('cvBottomPage');
+  const cvPrevBtn = document.getElementById('cvPrevBtn');
+  const cvNextBtn = document.getElementById('cvNextBtn');
+  const cvBottomPrevBtn = document.getElementById('cvBottomPrevBtn');
+  const cvBottomNextBtn = document.getElementById('cvBottomNextBtn');
+  const cvModeSingleBtn = document.getElementById('cvModeSingleBtn');
+  const cvModeAllBtn = document.getElementById('cvModeAllBtn');
+  const cvSingleView = document.getElementById('cvSingleView');
+  const cvScrollView = document.getElementById('cvScrollView');
+  const cvZoomInBtn = document.getElementById('cvZoomInBtn');
+  const cvZoomOutBtn = document.getElementById('cvZoomOutBtn');
+  const cvZoomResetBtn = document.getElementById('cvZoomResetBtn');
+  const cvZoomVal = document.getElementById('cvZoomVal');
+  const cvPaperWrap = document.getElementById('cvPaperWrap');
+
+  const totalCvPages = 14;
+  let currentCvPage = 1;
+  let currentZoom = 100;
+  let isAllPagesRendered = false;
+
+  function setCvPage(page) {
+    if (page < 1) page = 1;
+    if (page > totalCvPages) page = totalCvPages;
+    currentCvPage = page;
+
+    if (cvSingleImg) {
+      cvSingleImg.src = `assets/pages/page_${currentCvPage}.png`;
+      const langPage = translations[currentLang]?.cv_modal?.page_indicator || "Halaman";
+      cvSingleImg.alt = `Curriculum Vitae Nurul Azizah - ${langPage} ${currentCvPage}`;
+    }
+    if (cvCurrentPage) cvCurrentPage.textContent = currentCvPage;
+    if (cvBottomPage) cvBottomPage.textContent = currentCvPage;
+
+    if (cvPrevBtn) cvPrevBtn.disabled = currentCvPage === 1;
+    if (cvBottomPrevBtn) cvBottomPrevBtn.disabled = currentCvPage === 1;
+    if (cvNextBtn) cvNextBtn.disabled = currentCvPage === totalCvPages;
+    if (cvBottomNextBtn) cvBottomNextBtn.disabled = currentCvPage === totalCvPages;
+  }
+
+  function setZoom(zoom) {
+    if (zoom < 60) zoom = 60;
+    if (zoom > 200) zoom = 200;
+    currentZoom = zoom;
+    if (cvZoomVal) cvZoomVal.textContent = `${currentZoom}%`;
+    if (cvPaperWrap) {
+      cvPaperWrap.style.transform = `scale(${currentZoom / 100})`;
+      cvPaperWrap.style.transformOrigin = 'top center';
+    }
+  }
+
+  function renderAllCvPages() {
+    if (isAllPagesRendered || !cvScrollView) return;
+    cvScrollView.innerHTML = '';
+    const langPage = translations[currentLang]?.cv_modal?.page_indicator || "Halaman";
+    const langOf = translations[currentLang]?.cv_modal?.of || "dari";
+
+    for (let i = 1; i <= totalCvPages; i++) {
+      const pageBox = document.createElement('div');
+      pageBox.className = 'cv-scroll-page';
+      pageBox.innerHTML = `
+        <div class="cv-page-tag">
+          ${langPage} ${i} ${langOf} ${totalCvPages}
+        </div>
+        <div class="cv-page-wrap">
+          <div class="cv-protection-shield" aria-hidden="true"></div>
+          <img src="assets/pages/page_${i}.png" alt="Curriculum Vitae Nurul Azizah - ${langPage} ${i}" class="cv-page-img" draggable="false" loading="lazy">
+        </div>
+      `;
+      cvScrollView.appendChild(pageBox);
+    }
+    isAllPagesRendered = true;
+  }
+
+  function setCvMode(mode) {
+    const pageNav = document.getElementById('cvPageNav');
+    const bottomBar = document.querySelector('.cv-bottom-bar');
+
+    if (mode === 'all') {
+      if (cvModeAllBtn) cvModeAllBtn.classList.add('active');
+      if (cvModeSingleBtn) cvModeSingleBtn.classList.remove('active');
+      if (cvSingleView) cvSingleView.style.display = 'none';
+      if (cvScrollView) cvScrollView.style.display = 'flex';
+      renderAllCvPages();
+      if (pageNav) pageNav.style.display = 'none';
+      if (bottomBar) bottomBar.style.display = 'none';
+    } else {
+      if (cvModeSingleBtn) cvModeSingleBtn.classList.add('active');
+      if (cvModeAllBtn) cvModeAllBtn.classList.remove('active');
+      if (cvSingleView) cvSingleView.style.display = 'flex';
+      if (cvScrollView) cvScrollView.style.display = 'none';
+      if (pageNav && window.innerWidth > 580) pageNav.style.display = 'flex';
+      if (bottomBar && window.innerWidth <= 580) bottomBar.style.display = 'flex';
+      setCvPage(currentCvPage);
+    }
+  }
+
+  function openCvModal() {
+    if (typeof closeMobileNav === 'function') closeMobileNav();
+    setCvPage(currentCvPage);
+    setZoom(100);
+    if (cvModal) {
+      cvModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeCvModal() {
+    if (cvModal) {
+      cvModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openCvBtns.forEach(btn => btn.addEventListener('click', openCvModal));
+  if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCvModal);
+
+  if (cvModal) {
+    cvModal.addEventListener('click', (e) => {
+      if (e.target === cvModal) closeCvModal();
+    });
+
+    // Disable right click / context menu for CV protection
+    cvModal.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      const notice = (translations[currentLang] && translations[currentLang].cv_modal?.protected_notice) || "Dokumen ini diproteksi untuk pratinjau langsung.";
+      showToast(notice);
+      return false;
     });
   }
+
+  if (cvPrevBtn) cvPrevBtn.addEventListener('click', () => setCvPage(currentCvPage - 1));
+  if (cvNextBtn) cvNextBtn.addEventListener('click', () => setCvPage(currentCvPage + 1));
+  if (cvBottomPrevBtn) cvBottomPrevBtn.addEventListener('click', () => setCvPage(currentCvPage - 1));
+  if (cvBottomNextBtn) cvBottomNextBtn.addEventListener('click', () => setCvPage(currentCvPage + 1));
+
+  if (cvZoomInBtn) cvZoomInBtn.addEventListener('click', () => setZoom(currentZoom + 15));
+  if (cvZoomOutBtn) cvZoomOutBtn.addEventListener('click', () => setZoom(currentZoom - 15));
+  if (cvZoomResetBtn) cvZoomResetBtn.addEventListener('click', () => setZoom(100));
+
+  if (cvModeSingleBtn) cvModeSingleBtn.addEventListener('click', () => setCvMode('single'));
+  if (cvModeAllBtn) cvModeAllBtn.addEventListener('click', () => setCvMode('all'));
+
+  // Keyboard navigation & anti-download interception
+  document.addEventListener('keydown', (e) => {
+    if (!cvModal || !cvModal.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+      closeCvModal();
+    } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      if (cvSingleView && cvSingleView.style.display !== 'none') setCvPage(currentCvPage + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      if (cvSingleView && cvSingleView.style.display !== 'none') setCvPage(currentCvPage - 1);
+    } else if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
+      e.preventDefault();
+      const notice = (translations[currentLang] && translations[currentLang].cv_modal?.protected_notice) || "Dokumen ini diproteksi untuk pratinjau langsung.";
+      showToast(notice);
+    }
+  });
 });

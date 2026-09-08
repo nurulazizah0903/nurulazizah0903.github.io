@@ -13,7 +13,7 @@ const translations = {
       tools: "Keahlian",
       certificates: "Sertifikat",
       contact: "Kontak",
-      download_cv: "Download CV"
+      download_cv: "Lihat CV"
     },
     hero: {
       status: "Tersedia untuk Peluang Baru",
@@ -22,7 +22,7 @@ const translations = {
       description: "Full-Stack Developer berpengalaman yang berdedikasi pada pembelajaran berkelanjutan dan teknologi web modern. Memiliki rekam jejak terbukti dalam menghadirkan solusi sistem enterprise, alur ERP, dan aplikasi web berkualitas tinggi melalui komunikasi efektif dan kolaborasi klien.",
       btn_projects: "Lihat Proyek",
       btn_contact: "Hubungi Saya",
-      btn_cv: "CV PDF",
+      btn_cv: "Lihat CV",
       location: "Surabaya, Indonesia",
       location_label: "Lokasi",
       email_copy_title: "Klik untuk salin email"
@@ -237,7 +237,7 @@ const translations = {
       direct_email: "Email Resmi",
       direct_linkedin: "LinkedIn",
       direct_github: "GitHub Portfolio",
-      btn_download: "Download Complete CV (PDF)",
+      btn_download: "Lihat CV Lengkap",
       form_title: "Kirim Pesan Langsung",
       form_subtitle: "Pesan Anda akan otomatis terhubung ke kontak WhatsApp & email Nurul Azizah.",
       name_label: "Nama Anda",
@@ -271,6 +271,17 @@ const translations = {
       date_label: "Tanggal Terbit",
       status_label: "Status Kredensial",
       verified_status: "Terverifikasi Resmi"
+    },
+    cv_modal: {
+      title: "Curriculum Vitae",
+      protected_badge: "Hanya Lihat (Dilindungi)",
+      view_single: "Lembar",
+      view_all: "Semua",
+      prev_btn: "Sebelumnya",
+      next_btn: "Berikutnya",
+      page_indicator: "Halaman",
+      of: "dari",
+      protected_notice: "Dokumen ini diproteksi untuk pratinjau langsung dan tidak dapat diunduh."
     }
   },
 
@@ -283,7 +294,7 @@ const translations = {
       tools: "Tools & Skills",
       certificates: "Certificates",
       contact: "Contact",
-      download_cv: "Download CV"
+      download_cv: "View CV"
     },
     hero: {
       status: "Available for New Opportunities",
@@ -292,7 +303,7 @@ const translations = {
       description: "Experienced Full-Stack Developer passionate about continuous learning and keeping pace with evolving web technologies. Proven track record of delivering high-quality enterprise solutions, ERP flows, and web applications through effective communication and client collaboration.",
       btn_projects: "Recent Projects",
       btn_contact: "Let's Talk",
-      btn_cv: "CV PDF",
+      btn_cv: "View CV",
       location: "Surabaya, Indonesia",
       location_label: "Location",
       email_copy_title: "Click to copy email"
@@ -507,7 +518,7 @@ const translations = {
       direct_email: "Official Email",
       direct_linkedin: "LinkedIn",
       direct_github: "GitHub Portfolio",
-      btn_download: "Download Complete CV (PDF)",
+      btn_download: "View Full CV",
       form_title: "Send a Direct Message",
       form_subtitle: "Your message will automatically link to Nurul Azizah's WhatsApp & email.",
       name_label: "Your Name",
@@ -541,6 +552,17 @@ const translations = {
       date_label: "Issue Date",
       status_label: "Credential Status",
       verified_status: "Verified Official"
+    },
+    cv_modal: {
+      title: "Curriculum Vitae",
+      protected_badge: "View Only (Protected)",
+      view_single: "Single",
+      view_all: "All Pages",
+      prev_btn: "Previous",
+      next_btn: "Next",
+      page_indicator: "Page",
+      of: "of",
+      protected_notice: "This document is protected for direct preview only and cannot be downloaded."
     }
   }
 };

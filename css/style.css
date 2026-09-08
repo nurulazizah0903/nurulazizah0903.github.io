@@ -104,6 +104,10 @@ button, input, textarea, select {
   padding-right: 24px;
 }
 
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 /* ==========================================================================
    Typography & Shared Utilities
    ========================================================================== */
@@ -1411,12 +1415,14 @@ button, input, textarea, select {
   justify-content: center;
   padding: 20px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--transition-smooth);
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
 }
 
 .modal-backdrop.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
@@ -1628,6 +1634,349 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
+   Protected CV Popup Modal (View Only - No Download)
+   ========================================================================== */
+
+.cv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 7, 6, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.cv-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cv-modal-window {
+  background: #171514;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 980px;
+  height: 94vh;
+  height: 94dvh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(197, 255, 65, 0.05);
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.96) translateY(12px);
+  transition: transform var(--transition-smooth);
+}
+
+.cv-modal-backdrop.active .cv-modal-window {
+  transform: scale(1) translateY(0);
+}
+
+/* Toolbar */
+.cv-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #1d1a18;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cv-toolbar-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cv-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(197, 255, 65, 0.1);
+  border: 1px solid var(--border-volt);
+  border-radius: var(--radius-full);
+  color: var(--accent-volt);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cv-doc-title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.cv-toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-view-toggle {
+  display: inline-flex;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 2px;
+}
+
+.cv-tool-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.cv-tool-btn.active {
+  background: var(--accent-volt);
+  color: var(--text-dark);
+}
+
+.cv-page-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 2px 6px;
+}
+
+.cv-page-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0 4px;
+  white-space: nowrap;
+}
+
+.cv-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cv-icon-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-volt);
+}
+
+.cv-icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cv-zoom-controls {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 2px 4px;
+}
+
+.cv-zoom-reset-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.cv-zoom-reset-btn:hover {
+  color: var(--accent-volt);
+}
+
+.cv-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-left: 4px;
+}
+
+.cv-close-btn:hover {
+  background: var(--accent-volt);
+  color: var(--text-dark);
+  transform: rotate(90deg);
+}
+
+/* Viewport */
+.cv-viewport {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #0d0c0b;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cv-single-view {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cv-paper-wrap {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.cv-page-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
+}
+
+/* Protection Shield Layer to prevent context menu / drag */
+.cv-protection-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+  pointer-events: auto;
+}
+
+/* Continuous Scroll View */
+.cv-scroll-view {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.cv-scroll-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-page-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-volt);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(20, 18, 17, 0.85);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.cv-page-wrap {
+  width: 100%;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile Bottom Bar */
+.cv-bottom-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #1d1a18;
+  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.cv-nav-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cv-nav-action-btn:hover:not(:disabled) {
+  border-color: var(--border-volt);
+  color: var(--accent-volt);
+}
+
+.cv-nav-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cv-bottom-info {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.cv-bottom-info strong {
+  color: var(--accent-volt);
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 
@@ -1708,6 +2057,19 @@ button, input, textarea, select {
 
   .modal-details-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cv-modal-window {
+    height: 96vh;
+    height: 96dvh;
+  }
+
+  .cv-zoom-controls {
+    display: none;
+  }
+
+  .cv-toolbar {
+    padding: 10px 14px;
   }
 }
 
@@ -1884,5 +2246,41 @@ button, input, textarea, select {
     text-align: center;
     font-size: 0.85rem;
     padding: 12px 18px;
+  }
+
+  .cv-modal-backdrop {
+    padding: 8px 6px;
+  }
+
+  .cv-modal-window {
+    border-radius: var(--radius-lg);
+    height: 98vh;
+    height: 98dvh;
+  }
+
+  .cv-doc-title {
+    display: none;
+  }
+
+  .cv-badge {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .cv-page-nav {
+    display: none !important;
+  }
+
+  .cv-bottom-bar {
+    display: flex;
+  }
+
+  .cv-viewport {
+    padding: 14px 8px 24px;
+  }
+
+  .cv-close-btn {
+    width: 32px;
+    height: 32px;
   }
 }
